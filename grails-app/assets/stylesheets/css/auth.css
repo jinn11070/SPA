@@ -1,0 +1,19 @@
+/* line 1, ../sass/auth.scss */
+body {
+  background-image: url("/assets/bg_login.png");
+  overflow: hidden;
+}
+/* line 6, ../sass/auth.scss */
+body .grails-logo-container {
+  background: transparent;
+  margin: 0 auto;
+}
+/* line 10, ../sass/auth.scss */
+body .grails-logo-container img.grails-logo {
+  width: 440px;
+  height: 145px;
+}
+/* line 16, ../sass/auth.scss */
+body #login {
+  text-align: center;
+}

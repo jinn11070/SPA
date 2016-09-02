@@ -1,0 +1,15 @@
+Thumbs.db
+.DS_Store
+classes/
+*.ipr
+*.iws
+.project
+.settings
+.classpath
+/build/
+/node_modules/
+/out/
+/.gradle/
+/.idea/
+/.sass-cache/
+/bass.iml
