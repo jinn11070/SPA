@@ -13,6 +13,13 @@
 <body>
 <content tag="nav">
 	<li class="dropdown">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">ttttefef<span class="caret"></span></a>
+		<ul class="dropdown-menu">
+			<li><a href="#">tttt1</a></li>
+			<li><a href="#">tttt2</a></li>
+		</ul>
+	</li>
+	<li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
 		<ul class="dropdown-menu">
 			<li><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
