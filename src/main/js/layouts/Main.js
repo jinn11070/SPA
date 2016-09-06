@@ -1,6 +1,5 @@
 import TopMenu from './TopMenu';
-import SubMenu from './SubMenu';
 import LeftMenu from './LeftMenu';
 
-export {TopMenu, SubMenu, LeftMenu};
-export default {TopMenu:TopMenu, SubMenu:SubMenu, LeftMenu:LeftMenu};
+export {TopMenu, LeftMenu};
+export default {TopMenu:TopMenu, LeftMenu:LeftMenu};

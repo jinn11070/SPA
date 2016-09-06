@@ -26,7 +26,7 @@
   <div id="login">
     <div class="inner">
       <div class="fheader">login 하라냐</div>
-      <form action="/secure/main" method="POST" id="loginForm" class="cssform" autocomplete="off">
+      <form action="/bass" method="POST" id="loginForm" class="cssform" autocomplete="off">
         <p>
           <label for="username">Username:</label>
           <input type="text" class="text_" name="username" id="username"/>

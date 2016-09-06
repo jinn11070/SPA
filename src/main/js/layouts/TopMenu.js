@@ -52,8 +52,8 @@ class TopLevelNavbar extends Component {
 				</Navbar.Header>
 				<Navbar.Collapse>
 					<Nav>
-						<LinkContainer key="list" to="/list">
-							<NavItem>list</NavItem>
+						<LinkContainer key="management" to="/bass/management">
+							<NavItem>Management</NavItem>
 						</LinkContainer>
 					</Nav>
 					{/* Right side drop down menu items. */}
@@ -70,3 +70,4 @@ class TopLevelNavbar extends Component {
 		);
 	}
 }
+

@@ -9,9 +9,8 @@ class UrlMappings {
             }
         }*/
 
-        "/index"(view:"/index")
         "/"(view:"/login/auth")
-        "/secure/main"(view:"/secure/main")
+        "/bass"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }
