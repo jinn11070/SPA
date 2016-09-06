@@ -13,3 +13,4 @@ classes/
 /.idea/
 /.sass-cache/
 /bass.iml
+bundle.js

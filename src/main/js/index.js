@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, IndexRedirect, browserHistory} from 'react-router';
 //import createBrowserHistory from 'history/lib/createBrowserHistory';
 
-import {TopMenu, SubMenu, LeftMenu} from './layouts/navi'
+import {TopMenu, SubMenu, LeftMenu} from './layouts/Main'
 import List from './management/userManagement';
 
-require('../scss/reset.scss');
-require('../scss/auth.scss');
+require('../scss/index.scss');
 
 ReactDOM.render(
 	<Router history={browserHistory}>

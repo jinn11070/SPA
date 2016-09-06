@@ -16,7 +16,7 @@ import { LinkContainer } from 'react-router-bootstrap';
  * +-----------------------+
  *
  */
-export default class TopLevel extends Component {
+export default class TopMenu extends Component {
 	render() {
 		return (
 			<div>
@@ -25,9 +25,7 @@ export default class TopLevel extends Component {
 
 
 
-				<div className="container">
-					{this.props.children}
-				</div>
+				{this.props.children}
 
 
 

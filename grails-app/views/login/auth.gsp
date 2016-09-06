@@ -1,17 +1,21 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"><!--<![endif]-->
 <head>
-  %{--<meta name="layout" content="main"/>--}%
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <title>Welcome to BASS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-  <asset:stylesheet src="bootstrap.css?compile=false" />
-  <asset:stylesheet src="grails.css?compile=false" />
-  <asset:stylesheet src="application.css?compile=false" />
-
-  <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Welcome to BASS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
+	<asset:stylesheet src="bootstrap.css"/>
+	<asset:stylesheet src="grails.css"/>
+	<asset:stylesheet src="main.css"/>
+	<asset:stylesheet src="mobile.css"/>
+	<asset:stylesheet src="application.css"/>
+	<asset:stylesheet src="auth.css"/>
 </head>
 <body>
 
@@ -44,8 +48,7 @@
       </form>
     </div>
   </div>
-  <script type="text/javascript" src="/assets/jquery-2.2.0.min.js?compile=false" ></script>
-  <script type="text/javascript" src="/assets/bootstrap.js?compile=false" ></script>
-  <script type="text/javascript" src="/assets/application.js?compile=false" ></script>
+
+	<div class="footer" role="contentinfo"></div>
 </body>
 </html>
