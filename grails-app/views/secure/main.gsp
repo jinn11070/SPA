@@ -2,12 +2,9 @@
 <html>
 <head>
 	<meta name="layout" content="main"/>
-	<title>Welcome to BASS</title>
-
-	<asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
 <body>
-<content tag="nav">
+%{--<content tag="nav">
 	<li class="dropdown">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">ttttefef<span class="caret"></span></a>
 		<ul class="dropdown-menu">
@@ -50,7 +47,7 @@
 			</g:each>
 		</ul>
 	</li>
-</content>
+</content>--}%
 
 %{--<div class="svg" role="presentation">
 	<div class="grails-logo-container">
@@ -58,10 +55,9 @@
 	</div>
 </div>--}%
 
-<div id="content" role="main">
+<div id="root" role="main">
 
 </div>
 
-%{--<script type="text/jsx" src="/assets/jsx/main.jsx"></script>--}%
 </body>
 </html>

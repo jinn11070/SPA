@@ -13,8 +13,8 @@ buildscript {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.8.2"
         classpath "org.grails.plugins:hibernate4:5.0.10"
-        classpath "com.github.robfletcher:compass-gradle-plugin:2.0.6"
-        classpath "com.github.jruby-gradle:jruby-gradle-plugin:0.1.12"
+//        classpath "com.github.robfletcher:compass-gradle-plugin:2.0.6"
+//        classpath "com.github.jruby-gradle:jruby-gradle-plugin:0.1.12"
 		classpath "com.moowork.gradle:gradle-node-plugin:0.13"
 //		classpath "net.eikehirsch.react:gradle-react-plugin:0.3.1"
     }
@@ -29,7 +29,7 @@ apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.grails-gsp"
 apply plugin:"asset-pipeline"
-apply plugin:"com.github.robfletcher.compass"
+//apply plugin:"com.github.robfletcher.compass"
 apply plugin: "com.moowork.node"
 //apply plugin: "net.eikehirsch.react"
 
@@ -79,10 +79,10 @@ assets {
     minifyCss = true
 }
 
-compass {
-    cssDir = file("$project.rootDir/grails-app/assets/stylesheets/css")
-    sassDir = file("$project.rootDir/grails-app/assets/stylesheets/sass")
-}
+/*compass {
+	cssDir = file("grails-app/assets/stylesheets")
+	sassDir = file("src/main/sass")
+}*/
 
 node {
     version = '6.5.0'

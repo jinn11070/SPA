@@ -10,7 +10,6 @@
   <asset:stylesheet src="bootstrap.css?compile=false" />
   <asset:stylesheet src="grails.css?compile=false" />
   <asset:stylesheet src="application.css?compile=false" />
-  <asset:stylesheet src="css/auth.css?compile=false" />
 
   <asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
 </head>
