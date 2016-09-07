@@ -1,20 +1,3 @@
-/*
-import React, { Component } from 'react';
-
-export default class UserManagement extends Component {
-	render() {
-		return (
-			<div style={{padding: '1em'}}>
-				user list
-			</div>
-		);
-	}
-}
-
-*/
-
-
-
 import React, { Component } from 'react';
 import Breadcrumbs from 'react-breadcrumbs';
 

@@ -5,7 +5,6 @@ import {Router, Route, IndexRoute, IndexRedirect, browserHistory} from 'react-ro
 
 import {TopMenu, LeftMenu} from './layouts/Main'
 //import Main from './layouts/Main';
-import Management from './management/management';
 import UserManagement from './management/userManagement';
 import GroupManagement from './management/groupManagement';
 
@@ -15,10 +14,10 @@ ReactDOM.render(
 	<Router history={browserHistory}>
 		<Route name="Main" path="/bass" component={TopMenu}>
 
-			<IndexRedirect from="*" to="/bass/management" />
+			<IndexRedirect to="/bass/management" />
 
-			<Route path="/bass/management" name="management" component={LeftMenu} >
-				<IndexRedirect from="*" to="/bass/userManagement" />
+			<Route path="/bass/management" name="management" component={LeftMenu}>
+				<IndexRedirect to="/bass/userManagement" />
 				<Route path="/bass/userManagement" name="userManagement" component={UserManagement} />
 				<Route path="/bass/groupManagement" name="groupManagement" component={GroupManagement} />
 			</Route>
