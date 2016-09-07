@@ -1,8 +1,11 @@
 #root {
+	overflow-x: hidden;
+
 	nav {
 		&.navbar-fixed-top, &.navbar-fixed-bottom {
 			position: inherit;
 		}
+
 	}
 }
 
@@ -10,7 +13,18 @@
 .container {
 	padding: 0px;
 	margin: 0px;
+	width: 100%;
+
 	.text-muted {
 		color: #fff;
 	}
+
+}
+
+.nav li {
+	float: none;
+}
+
+.navbar-left {
+	width: 100%;
 }

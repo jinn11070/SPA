@@ -16,13 +16,16 @@ import { LinkContainer } from 'react-router-bootstrap';
  * +-----------------------+
  */
 export default class LeftMenu extends Component {
+
 	render() {
 		return (
-			<div class="column">
+			<div className="row">
 				{/* Generate second level menu(Navbar). */}
-				<SecondLevelNavbar route={this.props.route} />
+				<div className="col-sm-3 col-lg-2">
+					<SecondLevelNavbar route={this.props.route} />
+				</div>
 				{/* Page content. */}
-				<div style={{marginTop:0, paddingTop: 0, marginLeft:200}}>
+				<div className="col-sm-9 col-lg-10">
 					{this.props.children}
 				</div>
 			</div>
@@ -36,8 +39,8 @@ export default class LeftMenu extends Component {
 class SecondLevelNavbar extends Component {
 	render() {
 		return (
-			<Navbar style={{position:'fixed', marginTop:0, zIndex:1, width:'10%'}}>
-				<Nav navbar>
+			<Navbar style={{marginTop:0, zIndex:1}}>
+				<Nav pullLeft>
 					<LinkContainer key="userManagement" to="/bass/userManagement">
 						<NavItem>User Management</NavItem>
 					</LinkContainer>

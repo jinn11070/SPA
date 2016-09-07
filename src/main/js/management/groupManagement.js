@@ -6,7 +6,7 @@ export default class GroupManagement extends Component {
 		return (
 			<div>
 				<Breadcrumbs wrapperElement="ol" itemElement="li" customClass="breadcrumb" separator="" routes={this.props.routes} />
-				<div style={{paddingLeft: '1em'}}>
+				<div>
 					GroupManagement
 				</div>
 			</div>

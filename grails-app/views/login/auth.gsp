@@ -10,10 +10,6 @@
 	<title>Welcome to BASS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<asset:link rel="icon" href="favicon.ico" type="image/x-ico" />
-	<asset:stylesheet src="bootstrap.css"/>
-	<asset:stylesheet src="grails.css"/>
-	<asset:stylesheet src="main.css"/>
-	<asset:stylesheet src="mobile.css"/>
 	<asset:stylesheet src="application.css"/>
 	<asset:stylesheet src="auth.css"/>
 </head>

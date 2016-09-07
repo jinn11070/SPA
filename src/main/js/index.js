@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, IndexRedirect, browserHistory} from 'react-router';
-//import createBrowserHistory from 'history/lib/createBrowserHistory';
 
 import {TopMenu, LeftMenu} from './layouts/Main'
-//import Main from './layouts/Main';
 import UserManagement from './management/userManagement';
 import GroupManagement from './management/groupManagement';
 
