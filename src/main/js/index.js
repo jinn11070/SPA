@@ -16,9 +16,7 @@ require('../scss/index.scss');
 ReactDOM.render(
 	<Router history={appHistory} onUpdate={() => window.scrollTo(0, 0)}>
 		<Route name="Main" path="/" component={TopMenu}>
-
-			<IndexRedirect  to="userManagement"/>
-			<IndexRoute component={ LeftMenu }/>
+			<IndexRedirect to="management"/>
 
 			<Route path="management" name="Management" component={LeftMenu}>
 				<IndexRoute component = {UserManagement} />
