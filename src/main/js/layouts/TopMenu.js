@@ -22,18 +22,7 @@ export default class TopMenu extends Component {
 			<div>
 				{/* Top level menu(Navbar)*/}
 				<TopLevelNavbar route={this.props.route} />
-
-
-
 				{this.props.children}
-
-
-
-				<footer className="footer">
-					<div className="container">
-						<p className="text-muted">Place sticky footer content here.</p>
-					</div>
-				</footer>
 			</div>
 		);
 	}
@@ -47,21 +36,41 @@ class TopLevelNavbar extends Component {
 		return (
 			<Navbar fixedTop>
 				<Navbar.Header>
-					<Navbar.Brand><a href="#">React/Grails Boilerplate</a></Navbar.Brand>
+					<Navbar.Brand><a href="#">BASS</a></Navbar.Brand>
 					<Navbar.Toggle />
 				</Navbar.Header>
 				<Navbar.Collapse>
 					<Nav>
-						<LinkContainer key="management" to="/bass/management">
-							<NavItem>Management</NavItem>
-						</LinkContainer>
+						{
+							this.props.route.childRoutes.map((item)=> {
+								return (
+									<LinkContainer key={item.name} to={item.path}>
+										<NavItem>{item.name}</NavItem>
+									</LinkContainer>
+								);
+							})
+						}
 					</Nav>
-					{/* Right side drop down menu items. */}
+
 					<Nav pullRight>
-						<NavDropdown eventKey={1} title="Dropdown" id="collapsible-nav-dropdown">
-							<MenuItem eventKey={1.1} href="/">TOP</MenuItem>
-							<MenuItem eventKey={1.2} href="/changepassword">Change Password</MenuItem>
-							<MenuItem eventKey={1.3} href="/logout">Logout</MenuItem>
+						{/* Data Analysis. */}
+						<NavDropdown title="Data Analysis" id="collapsible-nav-dropdown" to="/dataAnalysis/queryEditor">
+							<LinkContainer key="queryEditor" to="/dataAnalysis/queryEditor">
+								<MenuItem>Query Editor</MenuItem>
+							</LinkContainer>
+							<LinkContainer key="dashboard" to="/dataAnalysis/dashboard">
+								<MenuItem>Dashboard</MenuItem>
+							</LinkContainer>
+						</NavDropdown>
+
+						{/* Management. */}
+						<NavDropdown title="Management" id="collapsible-nav-dropdown" to="/management/userManagement">
+							<LinkContainer key="userManagement" to="/management/userManagement">
+								<MenuItem>User Management</MenuItem>
+							</LinkContainer>
+							<LinkContainer key="groupManagement" to="/management/groupManagement">
+								<MenuItem>Group Management</MenuItem>
+							</LinkContainer>
 						</NavDropdown>
 					</Nav>
 				</Navbar.Collapse>

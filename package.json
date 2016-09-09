@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/jinn11070/initProj#readme",
   "dependencies": {
-    "history": "^1.13.0",
+    "chokidar": "^1.6.0",
+    "history": "^1.17.0",
     "impromptu-react-sidemenu": "^0.1.1",
     "react": "^15.3.1",
     "react-bootstrap": "^0.30.3",

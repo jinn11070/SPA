@@ -41,12 +41,15 @@ class SecondLevelNavbar extends Component {
 		return (
 			<Navbar style={{marginTop:0, zIndex:1}}>
 				<Nav pullLeft>
-					<LinkContainer key="userManagement" to="/bass/userManagement">
-						<NavItem>User Management</NavItem>
-					</LinkContainer>
-					<LinkContainer key="groupManagement" to="/bass/groupManagement">
-						<NavItem>Group Management</NavItem>
-					</LinkContainer>
+					{
+						(this.props.route.childRoutes ? this.props.route.childRoutes : []).map((item)=> {
+							return (
+								<LinkContainer key={item.name} to={'/'+this.props.route.path+'/'+item.path}>
+									<NavItem>{item.name}</NavItem>
+								</LinkContainer>
+							);
+						})
+					}
 				</Nav>
 			</Navbar>
 		);
