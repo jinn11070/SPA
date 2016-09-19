@@ -1,7 +1,5 @@
 import $ from "jquery";
 
-const urlBase = '/api'
-
 /**
  * Ajax functions.
  * TODO: rewrite with fetch APIs.
@@ -10,8 +8,8 @@ const urlBase = '/api'
 export function getList(callback, callbackError) {
 
 	$.ajax({
-		type: 'get',
-		url: urlBase + '/user/getList',
+		type: 'post',
+		url: '/user/getList', //Controller/method
 		dataType: 'json',
 		cache: false,
 		success: (data) => {

@@ -11,11 +11,4 @@ class LoginController {
 			message = "You are not authorized for this page"
 		}
 	}
-
-//	def springSecurityService
-
-	def auth() {
-//		def user = springSecurityService.currentUser
-//		println "User::" + user
-	}
 }

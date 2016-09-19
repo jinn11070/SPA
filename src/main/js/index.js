@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, IndexRoute, IndexRedirect, browserHistory, useRouterHistory } from 'react-router';
+import {Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-router';
 //import { createHashHistory } from 'history';
 
 import {TopMenu, LeftMenu} from './layouts/Main'

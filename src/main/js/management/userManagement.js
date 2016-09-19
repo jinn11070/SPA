@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import Breadcrumbs from 'react-breadcrumbs';
-//import UserList from '../ajax'
-//import 'whatwg-fetch';
 import * as ajax from '../ajax';
 
 export default class UserManagement extends Component {
@@ -40,9 +38,10 @@ class UserList extends Component {
 	render() {
 
 		const todoList = this.state.data;
+		console.log(JSON.stringify(todoList));
 
 		return (
-			<div>{todoList.id}</div>
+			<div>{todoList.userId}</div>
 		);
 	}
 }
