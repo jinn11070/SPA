@@ -4,25 +4,37 @@ import bass.user.UserAuthority
 
 class BootStrap {
 
-    def init = {
+    def init = { servletContext ->
 
-        def adminAuthority = new Authority(authority: 'ROLE_ADMIN').save()
-        def normalAuthority = new Authority(authority: 'ROLE_NORMAL').save()
-        def inactiveAuthority = new Authority(authority: 'ROLE_INACTIVE').save()
+		def startup = User.findByUserId("admin")
 
-        def admin = new User(username: 'admin', password: 'admin00').save()
+		if (startup == null) {
+			def adminAuthority = new Authority(authority: 'ROLE_ADMIN').save()
+			def normalAuthority = new Authority(authority: 'ROLE_NORMAL').save()
+			def inactiveAuthority = new Authority(authority: 'ROLE_INACTIVE').save()
 
-        UserAuthority.create admin, adminAuthority
+			def admin = new User(
+					userId: 'admin',
+					password: 'adminme',
+					username: 'Admin',
+					mail: 'admin@datastreams.co.kr',
+					phone: '010-151-1313',
+					theme: 'white',
+					registeredDate: new Date(),
+					lastLoginDate: new Date()
+			).save()
 
-        UserAuthority.withSession {
-            it.flush()
-            it.clear()
-        }
+			UserAuthority.create admin, adminAuthority
 
-        assert User.count() == 1
-        assert Authority.count() == 3
-        assert UserAuthority.count() == 1
-//        servletContext ->
+			UserAuthority.withSession {
+				it.flush()
+				it.clear()
+			}
+
+			assert User.count() == 1
+			assert Authority.count() == 3
+			assert UserAuthority.count() == 1
+		}
     }
     def destroy = {
     }

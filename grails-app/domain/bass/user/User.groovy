@@ -3,16 +3,23 @@ package bass.user
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 
-@EqualsAndHashCode(includes='username')
-@ToString(includes='username', includeNames=true, includePackage=false)
+@EqualsAndHashCode(includes='userId')
+@ToString(includes='userId', includeNames=true, includePackage=false)
 class User implements Serializable {
 
 	private static final long serialVersionUID = 1
 
 	transient springSecurityService
 
-	String username
+	String userId
 	String password
+	String username
+	String mail
+	String phone
+	String theme
+	Date registeredDate
+	Date lastLoginDate
+
 	boolean enabled = true
 	boolean accountExpired
 	boolean accountLocked
@@ -39,8 +46,14 @@ class User implements Serializable {
 	static transients = ['springSecurityService']
 
 	static constraints = {
+		userId blank: false, size: 4..50, unique: true
 		password blank: false, password: true
-		username blank: false, unique: true
+		username blank: false
+		mail blank: false, email: true
+		phone blank: false
+		theme blank: false
+		registeredDate nullable: true
+		lastLoginDate nullable: true
 	}
 
 	static mapping = {

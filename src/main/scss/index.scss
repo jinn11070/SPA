@@ -6,6 +6,14 @@
 			position: inherit;
 		}
 
+		.navbar-left {
+			width: 100%;
+
+			li {
+				float: none;
+			}
+
+		}
 	}
 }
 
@@ -18,13 +26,4 @@
 	.text-muted {
 		color: #fff;
 	}
-
-}
-
-.nav li {
-	float: none;
-}
-
-.navbar-left {
-	width: 100%;
 }
