@@ -16,16 +16,16 @@ require('../scss/index.scss');
 ReactDOM.render(
 	<Router history = {browserHistory}>
 		<Route name="Main" path="/" component={TopMenu}>
-			<IndexRedirect to="management"/>
+			<IndexRedirect to="management" />
 
 			<Route path="management" name="Management" component={LeftMenu}>
-				<IndexRoute component = {UserManagement} />
+				<IndexRedirect to="userManagement" />
 				<Route path="userManagement" name="User Management" component={UserManagement} />
 				<Route path="groupManagement" name="Group Management" component={GroupManagement} />
 			</Route>
 
 			<Route path="dataAnalysis" name="Data Analysis" component={LeftMenu}>
-				<IndexRoute component = {QueryEditor} />
+				<IndexRedirect to="queryEditor" />
 				<Route path="queryEditor" name="Query Editor" component={QueryEditor} />
 				<Route path="dashboard" name="Dashboard" component={Dashboard} />
 			</Route>

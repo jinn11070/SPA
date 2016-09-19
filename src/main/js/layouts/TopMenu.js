@@ -33,6 +33,7 @@ export default class TopMenu extends Component {
  */
 class TopLevelNavbar extends Component {
 	render() {
+		console.log(JSON.stringify(this.props.route.childRoutes));
 		return (
 			<Navbar fixedTop>
 				<Navbar.Header>
