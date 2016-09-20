@@ -6,7 +6,7 @@ import {Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-r
 import {TopMenu, LeftMenu} from './layouts/Main'
 import QueryEditor from './dataAnalysis/QueryEditor';
 import Dashboard from './dataAnalysis/Dashboard';
-import UserManagement from './management/UserManagement';
+import UserManagement from './management/userManagement';
 import GroupManagement from './management/GroupManagement';
 
 //const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
