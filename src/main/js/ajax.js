@@ -5,11 +5,11 @@ import $ from "jquery";
  * TODO: rewrite with fetch APIs.
  */
 
-export function getList(callback, callbackError) {
+export function list(url, callback, callbackError) {
 
 	$.ajax({
 		type: 'post',
-		url: '/user/getList', //Controller/method
+		url: url, //Controller/method
 		dataType: 'json',
 		cache: false,
 		success: (data) => {
@@ -23,4 +23,23 @@ export function getList(callback, callbackError) {
 		}
 	});
 }
+/*export function create(url, user, callback, callbackError) {
+
+	$.ajax({
+		type: 'post',
+		url: url, //Controller/method
+		dataType: 'json',
+		data: user,
+		cache: false,
+		success: (data) => {
+			callback(data)
+		},
+		error: (xhr, status, err) => {
+			console.error(xhr, status, err.toString())
+			if (callbackError !== undefined) {
+				callbackError(err)
+			}
+		}
+	});
+}*/
 

@@ -4,10 +4,10 @@ import {Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-r
 //import { createHashHistory } from 'history';
 
 import {TopMenu, LeftMenu} from './layouts/Main'
-import QueryEditor from './dataAnalysis/queryEditor';
-import Dashboard from './dataAnalysis/dashboard';
-import UserManagement from './management/userManagement';
-import GroupManagement from './management/groupManagement';
+import QueryEditor from './dataAnalysis/QueryEditor';
+import Dashboard from './dataAnalysis/Dashboard';
+import UserManagement from './management/UserManagement';
+import GroupManagement from './management/GroupManagement';
 
 //const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
