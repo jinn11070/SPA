@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import Breadcrumbs from 'react-breadcrumbs';
+import { CollapsibleNav, Navbar, NavBrand, Nav, NavItem, NavDropdown, MenuItem,
+	Grid, Row, Col, Modal, Button, Well } from 'react-bootstrap';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+
+import UserNewDialog from '../dialog/UserNewDialog';
+import ModalDialog from '../dialog/ModalDialog';
 import * as ajax from '../ajax';
 
 export default class UserManagement extends Component {
@@ -26,34 +31,55 @@ class UserList extends Component {
 		super();
 
 		this.state = {
-			data: []
-		}
+			userList: [],
+			showNewDialog: false,
+			showViewDialog: false,
+			showEditDialog: false,
+			showErrorDialog: false,
+			errorMessage: ''
+		};
 	}
-
 	componentDidMount() {
-		ajax.getList((data) => {
-			this.setState({ data: data });
+		ajax.list('/user/list', (data) => {
+			this.setState({
+				userList: data
+			});
 		})
 	}
-
+	createUser(user) {
+		this.setState({showNewDialog: false});
+		ajax.create('/user/create', user, (_) => {
+			this.reloadData()
+		}, (err)=>{
+			this.setState({
+				errorMessage: err,
+				showErrorDialog: true
+			})
+		})
+	}
 	render() {
 
-		const userList = this.state.data;
+		const userList = this.state.userList;
 		console.log(JSON.stringify(userList));
 
 		return (
-
-			<BootstrapTable data={userList}
-							hover striped condensed pagination deleteRow
-							selectRow={{
-								mode: 'checkbox',
-								bgColor: "F5F5F5"
-							}}>
-				<TableHeaderColumn dataField="userId" isKey={true}>Product ID</TableHeaderColumn>
-				<TableHeaderColumn dataField="username">Product Name</TableHeaderColumn>
-				<TableHeaderColumn dataField="phone">Product Price</TableHeaderColumn>
-				<TableHeaderColumn dataField="theme">Product Price</TableHeaderColumn>
-			</BootstrapTable>
+			<div>
+				<Button onClick={()=>this.setState({showNewDialog:true})}>New</Button>
+				<BootstrapTable data={userList}
+								hover striped condensed pagination
+								selectRow={{
+									mode: 'checkbox',
+									bgColor: "F5F5F5"
+								}}>
+					<TableHeaderColumn dataField="userId" isKey={true}>Product ID</TableHeaderColumn>
+					<TableHeaderColumn dataField="username">Product Name</TableHeaderColumn>
+					<TableHeaderColumn dataField="phone">Product Price</TableHeaderColumn>
+					<TableHeaderColumn dataField="theme">Product Price</TableHeaderColumn>
+				</BootstrapTable>
+				<UserNewDialog show={this.state.showNewDialog}
+							   close={()=>this.setState({showNewDialog:false})}
+							   submitButtonAction={this.createUser.bind(this)}/>
+			</div>
 
 		);
 	}
