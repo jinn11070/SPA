@@ -3,18 +3,6 @@ import { CollapsibleNav, Navbar, NavBrand, Nav, NavItem, NavDropdown, MenuItem,
 	Grid, Row, Col, Modal, Button, Well } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-/**
- * Second level structure.
- *
- * +-TopLevel--------------+
- * | TopLevelNavbar        |
- * | +-SecondLevel-------+ |
- * | | SecondLevelNavBar | |
- * | | {childlen}        | |
- * | +-------------------+ |
- * | footer                |
- * +-----------------------+
- */
 export default class LeftMenu extends Component {
 
 	render() {
@@ -22,7 +10,7 @@ export default class LeftMenu extends Component {
 			<div className="row">
 				{/* Generate second level menu(Navbar). */}
 				<div className="col-sm-3 col-lg-2">
-					<SecondLevelNavbar route={this.props.route} />
+					<LeftMenuNavbar route={this.props.route} />
 				</div>
 				{/* Page content. */}
 				<div className="col-sm-9 col-lg-10">
@@ -34,9 +22,9 @@ export default class LeftMenu extends Component {
 }
 
 /**
- * Second level menu navbar.
+ * Left menu navbar.
  */
-class SecondLevelNavbar extends Component {
+class LeftMenuNavbar extends Component {
 	render() {
 		return (
 			<Navbar style={{marginTop:0, zIndex:1}}>
