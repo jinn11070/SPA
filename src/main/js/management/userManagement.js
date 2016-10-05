@@ -71,8 +71,8 @@ class UserList extends Component {
 									mode: 'checkbox',
 									bgColor: "F5F5F5"
 								}}>
-					<TableHeaderColumn dataField="userId" isKey={true}>Product ID</TableHeaderColumn>
-					<TableHeaderColumn dataField="username">Product Name</TableHeaderColumn>
+					<TableHeaderColumn dataField="username" isKey={true}>Product ID</TableHeaderColumn>
+					<TableHeaderColumn dataField="name">Product Name</TableHeaderColumn>
 					<TableHeaderColumn dataField="phone">Product Price</TableHeaderColumn>
 					<TableHeaderColumn dataField="theme">Product Price</TableHeaderColumn>
 				</BootstrapTable>

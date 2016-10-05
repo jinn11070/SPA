@@ -21,11 +21,11 @@
 
   <div id="login">
     <div class="inner">
-      <div class="fheader">login 하라냐</div>
-      <form action="/" method="POST" id="loginForm" class="cssform" autocomplete="off">
+      <div class="fheader">login 하라냐<g:message code="springSecurity.login.header"/></div>
+      <form action='${postUrl}' method="POST" id="loginForm" class="cssform" autocomplete="off">
         <p>
           <label for="username">Username:</label>
-          <input type="text" class="text_" name="username" id="username"/>
+          <input type="text" class="text_" name="username" id="username" value="${username}" required=""/>
         </p>
 
         <p>
@@ -34,7 +34,7 @@
         </p>
 
         <p id="remember_me_holder">
-          <input type="checkbox" class="chk" name="remember-me" id="remember_me" />
+          <input type="checkbox" class="chk" name="remember-me" id="remember_me" <g:if test='${hasCookie}'>checked='checked'</g:if>/>
           <label for="remember_me">Remember me</label>
         </p>
 

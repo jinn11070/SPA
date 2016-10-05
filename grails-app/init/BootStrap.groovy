@@ -6,7 +6,8 @@ class BootStrap {
 
     def init = { servletContext ->
 
-		def startup = User.findByUserId("admin")
+		def startup = User.findByUsername("admin")
+		println "startup:" + startup
 
 		if (startup == null) {
 			def adminAuthority = new Authority(authority: 'ROLE_ADMIN').save()
@@ -14,9 +15,9 @@ class BootStrap {
 			def inactiveAuthority = new Authority(authority: 'ROLE_INACTIVE').save()
 
 			def admin = new User(
-					userId: 'admin',
+					username: 'admin',
 					password: 'adminme',
-					username: 'Admin',
+					name: 'Admin',
 					mail: 'admin@datastreams.co.kr',
 					phone: '010-151-1313',
 					theme: 'white',

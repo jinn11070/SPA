@@ -9,8 +9,8 @@ class UrlMappings {
 			}
 		}
 
-        "/bass"(view:"/login/auth")
-        "/"(view:"/index")
+//        "/"(view:"/index")
+        "/"(controller:"management")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }

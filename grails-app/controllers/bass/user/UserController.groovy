@@ -8,22 +8,8 @@ class UserController {
 
 		def userList = User.list()
 
-		if (userList == null) {
-			render 'null'
-			return
-		}
-
-		/*def jsonUserList = userList as JSON
-
-		userList = new JsonSlurper().parseText(jsonUserList.toString())
-
-		for (user in userList) {
-			user.contents = user.contents.sort { a, b -> a.name <=> b.name }
-		}*/
-
-		println userList as JSON
-		render(text: userList as JSON, contentType: "application/json")
-		return
+        render(text: userList as JSON, contentType: "application/json")
+        return
 	}
 
 	@Transactional
