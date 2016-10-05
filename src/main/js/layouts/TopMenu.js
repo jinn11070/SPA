@@ -16,8 +16,6 @@ import * as ajax from '../ajax';
  *
  */
 
-const urlBase = '/bass';
-
 export default class TopMenu extends Component {
 	render() {
 		return (
@@ -59,7 +57,7 @@ class TopMenuNavbar extends Component {
 					</Navbar.Header>
 					<Navbar.Collapse>
 						<Nav>
-							{
+                            {/*{
 								this.props.route.childRoutes.map((item)=> {
 									return (
 										<LinkContainer key={item.name} to={this.props.route.path + '/' + item.path}>
@@ -67,10 +65,7 @@ class TopMenuNavbar extends Component {
 										</LinkContainer>
 									);
 								})
-							}
-						</Nav>
-
-						<Nav pullRight>
+							}*/}
                             {
                                 this.props.route.childRoutes.map((item)=> {
                                     return (
@@ -78,7 +73,7 @@ class TopMenuNavbar extends Component {
                                             {
                                                 item.childRoutes.map( (childItem)=> {
                                                     return (
-                                                        <LinkContainer key={childItem.name} to={this.props.route.path + '/' + item.path + '/' + childItem.path}>
+                                                        <LinkContainer key={childItem.path} to={this.props.route.path + '/' + item.path + '/' + childItem.path}>
                                                             <NavItem>{childItem.name}</NavItem>
                                                         </LinkContainer>
                                                     );
@@ -88,7 +83,9 @@ class TopMenuNavbar extends Component {
                                     );
                                 })
                             }
+						</Nav>
 
+						<Nav pullRight>
 							<NavItem onClick={()=>this.setState({showViewDialog:true})}>info</NavItem>
                             <NavItem href="/bass/logout/index">logout</NavItem>
 						</Nav>
