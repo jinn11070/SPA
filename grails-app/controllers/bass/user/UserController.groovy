@@ -1,8 +1,10 @@
 package bass.user
 
 import grails.converters.JSON
+import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
+@Secured(['ROLE_ADMIN'])
 class UserController {
 	def list() {
 

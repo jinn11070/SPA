@@ -1,6 +1,6 @@
 /* auth */
 body {
-	background-image: url("/assets/bg_login.png");
+	background-image: url("../assets/bg_login.png");
 	overflow: hidden;
 }
 

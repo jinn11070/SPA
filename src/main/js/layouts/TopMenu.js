@@ -15,6 +15,9 @@ import * as ajax from '../ajax';
  * +-----------------------+
  *
  */
+
+const urlBase = '/bass';
+
 export default class TopMenu extends Component {
 	render() {
 		return (
@@ -47,7 +50,6 @@ class TopMenuNavbar extends Component {
 		})
 	}*/
 	render() {
-		console.log(JSON.stringify(this.props.route.childRoutes));
 		return (
 			<div>
 				<Navbar fixedTop>
@@ -60,7 +62,7 @@ class TopMenuNavbar extends Component {
 							{
 								this.props.route.childRoutes.map((item)=> {
 									return (
-										<LinkContainer key={item.name} to={item.path}>
+										<LinkContainer key={item.name} to={this.props.route.path + '/' + item.path}>
 											<NavItem>{item.name}</NavItem>
 										</LinkContainer>
 									);
@@ -69,31 +71,30 @@ class TopMenuNavbar extends Component {
 						</Nav>
 
 						<Nav pullRight>
-							{/* Data Analysis. */}
-							<NavDropdown title="Data Analysis" id="collapsible-nav-dropdown" to="/dataAnalysis/queryEditor">
-								<LinkContainer key="queryEditor" to="/dataAnalysis/queryEditor">
-									<MenuItem>Query Editor</MenuItem>
-								</LinkContainer>
-								<LinkContainer key="dashboard" to="/dataAnalysis/dashboard">
-									<MenuItem>Dashboard</MenuItem>
-								</LinkContainer>
-							</NavDropdown>
+                            {
+                                this.props.route.childRoutes.map((item)=> {
+                                    return (
+                                        <NavDropdown title={item.name} id="collapsible-nav-dropdown" to={item.path + item.indexRoute.to}>
+                                            {
+                                                item.childRoutes.map( (childItem)=> {
+                                                    return (
+                                                        <LinkContainer key={childItem.name} to={this.props.route.path + '/' + item.path + '/' + childItem.path}>
+                                                            <NavItem>{childItem.name}</NavItem>
+                                                        </LinkContainer>
+                                                    );
+                                                })
+                                            }
+                                        </NavDropdown>
+                                    );
+                                })
+                            }
 
-							{/* Management. */}
-							<NavDropdown title="Management" id="collapsible-nav-dropdown" to="/management/userManagement">
-								<LinkContainer key="userManagement" to="/management/userManagement">
-									<MenuItem>User Management</MenuItem>
-								</LinkContainer>
-								<LinkContainer key="groupManagement" to="/management/groupManagement">
-									<MenuItem>Group Management</MenuItem>
-								</LinkContainer>
-							</NavDropdown>
-							<NavItem onClick={()=>this.setState({showViewDialog:true})}>Info</NavItem>
+							<NavItem onClick={()=>this.setState({showViewDialog:true})}>info</NavItem>
+                            <NavItem href="/bass/logout/index">logout</NavItem>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
-				<BassInfoDialog show={this.state.showViewDialog}
-								close={()=>this.setState({showViewDialog:false})}/>
+				<BassInfoDialog show={this.state.showViewDialog} close={()=>this.setState({showViewDialog:false})}/>
 			</div>
 
 		);

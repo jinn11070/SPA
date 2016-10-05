@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, IndexRedirect, browserHistory, useRouterHistory } from 'react-router';
-import { createHistory, useBasename } from 'history'
+import {Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-router';
+//import { Router, Route, IndexRoute, IndexRedirect, browserHistory, useRouterHistory } from 'react-router';
+//import { createHistory, useBasename } from 'history'
 
-const bassHistory = useRouterHistory(useBasename(createHistory))({
-	basename: "/bass"
-});
+//const bassHistory = useRouterHistory(useBasename(createHistory))({
+//	basename: "/"
+//});
+
 
 import { TopMenu, LeftMenu } from './layouts/Main'
 import QueryEditor from './dataAnalysis/queryEditor';
@@ -13,13 +15,12 @@ import Dashboard from './dataAnalysis/dashboard';
 import UserManagement from './management/userManagement';
 import GroupManagement from './management/groupManagement';
 
-
-
 require('../scss/index.scss');
 
 ReactDOM.render(
-	<Router history={bassHistory}>
-		<Route name="Main" path="/management/userManagement" component={TopMenu}>
+	<Router history={browserHistory}>
+		<Route name="Main" path="/bass" component={TopMenu}>
+            <IndexRoute to="management" />
 			<IndexRedirect to="management" />
 
 			<Route path="management" name="Management" component={LeftMenu}>

@@ -5,11 +5,12 @@ import $ from "jquery";
  * TODO: rewrite with fetch APIs.
  */
 
+const urlBase = '/bass';
 export function list(url, callback, callbackError) {
 
 	$.ajax({
 		type: 'post',
-		url: url, //Controller/method
+		url: urlBase + url, //Controller/method
 		dataType: 'json',
 		cache: false,
 		success: (data) => {

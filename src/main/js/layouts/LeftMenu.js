@@ -3,6 +3,8 @@ import { CollapsibleNav, Navbar, NavBrand, Nav, NavItem, NavDropdown, MenuItem,
 	Grid, Row, Col, Modal, Button, Well } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
+const urlBase = '/bass';
+
 export default class LeftMenu extends Component {
 
 	render() {
@@ -32,7 +34,7 @@ class LeftMenuNavbar extends Component {
 					{
 						(this.props.route.childRoutes ? this.props.route.childRoutes : []).map((item)=> {
 							return (
-								<LinkContainer key={item.name} to={'/'+this.props.route.path+'/'+item.path}>
+								<LinkContainer key={item.name} to={urlBase + '/'+this.props.route.path+'/'+item.path}>
 									<NavItem>{item.name}</NavItem>
 								</LinkContainer>
 							);
