@@ -52,7 +52,7 @@ class TopMenuNavbar extends Component {
 			<div>
 				<Navbar fixedTop>
 					<Navbar.Header>
-						<Navbar.Brand><a href="#">BASS</a></Navbar.Brand>
+						<Navbar.Brand><a href="/bass"><img src="/bass/assets/logo_top.png"/></a></Navbar.Brand>
 						<Navbar.Toggle />
 					</Navbar.Header>
 					<Navbar.Collapse>
