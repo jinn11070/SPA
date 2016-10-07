@@ -1,0 +1,247 @@
+body {
+	background-image: url("../assets/bg_login.png");
+	overflow: hidden;
+    font-family: "Roboto medium", sans-serif;
+    color: #E5E9F4;
+}
+
+form {
+    margin: 4.7em 0 0 0;
+}
+
+p {
+    margin: 0px;
+}
+
+input {
+    color: #1C1D1F;
+    border: 0px;
+}
+
+img.grails-logo {
+	width: 27.5em;
+	height: auto;
+}
+
+#login {
+	text-align: center;
+    padding: 14em 0em;
+}
+
+/* bootstrap input */
+.form-control {
+    height: 38px;
+    border: 0px;
+}
+
+.form-group {
+    margin-bottom: 1px;
+}
+
+.inner {
+    margin: 5em 0 0 0;
+}
+
+.align-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.align-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+label {
+    width: 18em;
+    margin-bottom: 0px;
+    text-align: left;
+    text-indent: 2em;
+}
+
+label[for=username] {
+    background: #FFFFFF url("../assets/login_id.png") 10px center no-repeat;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    margin-bottom: 1px;
+}
+
+label[for=password] {
+
+    -webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
+    text-align: left;
+}
+
+label[for=remember_me] {
+    width: inherit;
+    font-weight: normal;
+    font-size: 0.9em;
+    text-indent: 0em;
+}
+
+input[type=text],
+input[type=password] {
+    width: 18em;
+    font-size: 13px;
+    line-height: 1.65em;
+    font-weight: normal;
+    text-indent: 20px;
+}
+
+input#username {
+    background: #FFFFFF url("../assets/login_id.png") 10px 8px no-repeat;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+}
+
+input#password {
+    background: #FFFFFF url("../assets/login_password.png") 10px 8px no-repeat;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+input#submit {
+    margin-left: 5px;
+    padding: 2.05em;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: 0px;
+    border-radius: 4px;
+    background: #20D1D8;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+input#submit:hover {
+    background: #EEDD33;
+    color: #1C1D1F;
+}
+
+#remember_me_holder {
+    text-align: right;
+}
+
+/* bootstrap checkbox */
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0px;
+}
+
+.checkbox label {
+    padding: 0px 16px 0px 0px;
+}
+.checkbox input[type="checkbox"] {
+    margin: 2px;
+}
+
+/* stickey-footer */
+.footer {
+    height: 140px;
+    background-color: #DDDDDD;
+    text-align: center;
+}
+
+#footerMenu {
+    height: 75%;
+    line-height: 7.5em;
+    color: #1C1D1F;
+}
+
+/* bootstrap select */
+/*
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 8em;
+}
+
+.btn-default {
+    background: #DDDDDD;
+    border: 2px solid #29313C;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: #29313C;
+}
+
+.dropdown-menu {
+    padding: 0px;
+    font-size: 12px;
+    border: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.dropdown-menu > li > a {
+    padding: 2px 6px;
+}
+*/
+
+#footerMenuLanguage {
+    width: auto;
+    height: 100%;
+}
+
+select#selectLanguage {
+    background: #DDDDDD;
+    border: 2px solid #29313C;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 12px;
+    color: #29313C;
+}
+
+#copyright {
+    width: 100%;
+    height: 25%;
+    background: #29313c;
+    bottom: 0;
+}
+
+#copyright ul {
+    /*width: 31em;*/
+    height: 2.25em;
+    margin: 0 auto;
+}
+
+#copyright li {
+    color: #72767b;
+    font-size: 0.7em;
+    display: inline-block;
+    height: 2.25em;
+    line-height: 3.2em;
+    vertical-align: top;
+}
+
+#copyrightText a:link {
+    color: #72767b;
+    text-decoration: none;
+}
+#copyrightText a:active {
+    color: #72767b;
+}
+#copyrightText a:hover {
+    color: #72767b;
+}
+#copyrightText a:focus {
+    color: #72767b;
+}
+
+#copyrightLogo {
+    width: 8em;
+    height: 1em;
+    background: url("/bass/assets/theme/common/image/logo_copyright.png") no-repeat;
+    display: inline-block;
+    margin-left: 1em;
+    margin-top: 0.8em;
+}
+
+#contactDS {
+    background: url("/bass/assets/theme/common/icon/common_icons.png") 0px -124px no-repeat;
+}

@@ -14,6 +14,7 @@
 
 	<asset:javascript src="jquery-2.2.0.min.js"/>
 	<asset:javascript src="bootstrap.js"/>
+	<asset:javascript src="bootstrap-select.min.js"/>
 	<g:layoutHead/>
 </head>
 <body>

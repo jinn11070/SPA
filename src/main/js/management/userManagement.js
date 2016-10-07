@@ -71,10 +71,10 @@ class UserList extends Component {
 									mode: 'checkbox',
 									bgColor: "F5F5F5"
 								}}>
-					<TableHeaderColumn dataField="username" isKey={true}>Product ID</TableHeaderColumn>
-					<TableHeaderColumn dataField="name">Product Name</TableHeaderColumn>
-					<TableHeaderColumn dataField="phone">Product Price</TableHeaderColumn>
-					<TableHeaderColumn dataField="theme">Product Price</TableHeaderColumn>
+					<TableHeaderColumn dataField="username" isKey={true}>ID</TableHeaderColumn>
+					<TableHeaderColumn dataField="name">Name</TableHeaderColumn>
+					<TableHeaderColumn dataField="phone">Phone</TableHeaderColumn>
+					<TableHeaderColumn dataField="theme">Theme</TableHeaderColumn>
 				</BootstrapTable>
 				<UserNewDialog show={this.state.showNewDialog}
 							   close={()=>this.setState({showNewDialog:false})}
