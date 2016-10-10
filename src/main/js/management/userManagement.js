@@ -60,7 +60,7 @@ class UserList extends Component {
 	render() {
 
 		const userList = this.state.userList;
-		console.log(JSON.stringify(userList));
+		//console.log(JSON.stringify(userList));
 
 		return (
 			<div>

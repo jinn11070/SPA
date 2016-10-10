@@ -18,6 +18,7 @@ import * as ajax from '../ajax';
 
 export default class TopMenu extends Component {
 	render() {
+
 		return (
 			<div>
 				<TopMenuNavbar route={this.props.route} />
@@ -31,22 +32,23 @@ export default class TopMenu extends Component {
  * Top menu navbar.
  */
 class TopMenuNavbar extends Component {
-
 	constructor() {
 		super();
 
 		this.state = {
 			bassInfo: [],
-			showViewDialog: false
+			showViewDialog: false,
+            thisPath: ""
 		};
 	}
-	/*componentDidMount() {
-		ajax.list('/login/getBassInformation', (data) => {
+	componentDidMount() {
+		/*ajax.list('/login/getBassInformation', (data) => {
 			this.setState({
 				bassInformation: data
 			});
-		})
-	}*/
+		})*/
+        console.log(ajax.getThisPath());
+	}
 	render() {
 		return (
 			<div>
@@ -67,13 +69,13 @@ class TopMenuNavbar extends Component {
 								})
 							}*/}
                             {
-                                this.props.route.childRoutes.map((item)=> {
+                                this.props.route.childRoutes.map((item, i)=> {
                                     return (
-                                        <NavDropdown title={item.name} id="collapsible-nav-dropdown" to={item.path + item.indexRoute.to}>
+                                        <NavDropdown title={item.name} id={item.path} to={item.path + item.indexRoute.to}>
                                             {
                                                 item.childRoutes.map( (childItem)=> {
                                                     return (
-                                                        <LinkContainer key={childItem.path} to={this.props.route.path + '/' + item.path + '/' + childItem.path}>
+                                                        <LinkContainer key={childItem.path} to={this.props.route.path + '/' + item.path + '/' + childItem.path} eventKey={item.path} onSelect={ajax.setThisPath}>
                                                             <NavItem>{childItem.name}</NavItem>
                                                         </LinkContainer>
                                                     );

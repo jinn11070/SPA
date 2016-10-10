@@ -6,6 +6,17 @@ import $ from "jquery";
  */
 
 const urlBase = '/bass';
+const params = {
+    thisPath: ''
+}
+export function getThisPath() {
+    return params.thisPath;
+}
+export function setThisPath(eventKey) {
+    console.log(eventKey);
+    params.thisPath = eventKey;
+}
+
 export function list(url, callback, callbackError) {
 
 	$.ajax({

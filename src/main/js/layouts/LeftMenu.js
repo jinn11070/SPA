@@ -2,10 +2,27 @@ import React, { Component } from 'react';
 import { CollapsibleNav, Navbar, NavBrand, Nav, NavItem, NavDropdown, MenuItem,
 	Grid, Row, Col, Modal, Button, Well } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import * as ajax from '../ajax';
 
 const urlBase = '/bass';
 
 export default class LeftMenu extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            thisPath: ''
+        };
+    }
+    componentDidMount() {
+        console.log(ajax.getThisPath());
+        this.setState({
+            thisPath: ajax.getThisPath()
+        });
+
+        console.log(this.props.thisPath);
+
+    }
 
 	render() {
 		return (
@@ -27,14 +44,15 @@ export default class LeftMenu extends Component {
  * Left menu navbar.
  */
 class LeftMenuNavbar extends Component {
+
 	render() {
 		return (
 			<Navbar style={{marginTop:0, zIndex:1}}>
 				<Nav pullLeft>
 					{
-						(this.props.route.childRoutes ? this.props.route.childRoutes : []).map((item)=> {
+						(this.props.route.childRoutes ? this.props.route.childRoutes : []).map((item, i)=> {
 							return (
-								<LinkContainer key={item.name} to={urlBase + '/'+this.props.route.path+'/'+item.path}>
+								<LinkContainer key={item.name} to={urlBase + '/'+this.props.route.path+'/'+item.path} eventKey={this.props.route.path} onSelect={ajax.setThisPath}>
 									<NavItem>{item.name}</NavItem>
 								</LinkContainer>
 							);
