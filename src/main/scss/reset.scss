@@ -13,10 +13,10 @@ blockquote, q {quotes: none}
 blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
 input,select,textarea,button {vertical-align:middle}
 img {max-width: 100%;vertical-align:top}
-a,button {border:0 none;background-color:transparent;cursor:pointer}
+a,button {border:0 none;background-color:transparent;cursor:pointer;outline:none}
 body {background:#fff}
 body,th,td,input,select,textarea,button {font-size:13px;line-height:1.5;font-family:'Roboto medium', sans-serif;}
 a {color:#333;text-decoration:none}
-a:link, a:visited, a:active, a:hover {text-decoration:none}
+a:link, a:visited, a:active, a:hover {text-decoration:none;outline:none}
 address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
 table {border-collapse:collapse;border-spacing:0}

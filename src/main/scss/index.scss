@@ -1,5 +1,6 @@
 @import "reset";
 @import "method";
+@import "fonts";
 
 #root {
 	overflow-x: hidden;
@@ -167,6 +168,14 @@
 
 
 
+    }
+    #content {
+        &[name=dataAnalysis] {
+            border-top: 4px solid $bass-main-blue-color;
+        }
+        &[name=management] {
+            border-top: 4px solid $bass-main-green-color;
+        }
     }
 }
 

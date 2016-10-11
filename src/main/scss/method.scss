@@ -16,7 +16,7 @@ $bass-font-color: $bass-main-black-color;
     $letter-spacing: -0.1px) {
     letter-spacing: $letter-spacing;
     font: {
-        family: $family;
+        family: $family, sans-serif;
         weight: $weight;
         size: $size;
     }

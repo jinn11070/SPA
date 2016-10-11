@@ -15,6 +15,9 @@ export function getThisPath() {
 export function setThisPath(eventKey) {
     console.log(eventKey);
     params.thisPath = eventKey;
+
+    $("#content").removeAttr("name");
+    $("#content").attr("name", eventKey);
 }
 
 export function list(url, callback, callbackError) {

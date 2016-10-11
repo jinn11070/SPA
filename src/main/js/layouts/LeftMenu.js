@@ -15,18 +15,14 @@ export default class LeftMenu extends Component {
         };
     }
     componentDidMount() {
-        console.log(ajax.getThisPath());
         this.setState({
             thisPath: ajax.getThisPath()
         });
-
-        console.log(this.props.thisPath);
-
+        ajax.setThisPath('management');
     }
-
 	render() {
 		return (
-			<div className="row">
+			<div id="content" className="row">
 				{/* Generate second level menu(Navbar). */}
 				<div className="col-sm-3 col-lg-2">
 					<LeftMenuNavbar route={this.props.route} />

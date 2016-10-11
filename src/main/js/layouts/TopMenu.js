@@ -38,16 +38,7 @@ class TopMenuNavbar extends Component {
 		this.state = {
 			bassInfo: [],
 			showViewDialog: false,
-            thisPath: ""
 		};
-	}
-	componentDidMount() {
-		/*ajax.list('/login/getBassInformation', (data) => {
-			this.setState({
-				bassInformation: data
-			});
-		})*/
-        console.log(ajax.getThisPath());
 	}
 	render() {
 		return (
@@ -69,9 +60,9 @@ class TopMenuNavbar extends Component {
 								})
 							}*/}
                             {
-                                this.props.route.childRoutes.map((item, i)=> {
+                                this.props.route.childRoutes.map((item)=> {
                                     return (
-                                        <NavDropdown title={item.name} id={item.path} to={item.path + item.indexRoute.to}>
+                                        <NavDropdown title={item.name} id={item.path} to={item.path + item.indexRoute.to} key={item.path}>
                                             {
                                                 item.childRoutes.map( (childItem)=> {
                                                     return (
