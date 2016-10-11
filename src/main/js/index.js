@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, IndexRedirect, browserHistory } from 'react-router';
+import "babel-polyfill";
 //import { Router, Route, IndexRoute, IndexRedirect, browserHistory, useRouterHistory } from 'react-router';
 //import { createHistory, useBasename } from 'history'
 
