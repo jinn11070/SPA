@@ -4,6 +4,19 @@ import Breadcrumbs from 'react-breadcrumbs';
 //import BookList from './BookList.js'
 
 export default class UserManagement extends Component {
+
+	componentWillMount() {
+		this.serverRequest = $.get('/bass/list', function (result) {
+
+			console.log(result)
+			/*var lastGist = result[0];
+			this.setState({
+				username: lastGist.owner.login,
+				lastGistUrl: lastGist.html_url
+			});*/
+		}.bind(this));
+	}
+
 	render() {
 		return (
 			<div>

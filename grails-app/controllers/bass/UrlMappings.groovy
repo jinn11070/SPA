@@ -3,11 +3,11 @@ package bass
 class UrlMappings {
 
     static mappings = {
-        /*"/$controller/$action?/$id?(.$format)?"{
+        "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here
             }
-        }*/
+        }
 
         "/bass"(view:"/login/auth")
         "/"(view:"/index")

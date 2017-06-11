@@ -16,8 +16,17 @@ import { LinkContainer } from 'react-router-bootstrap';
  * +-----------------------+
  */
 export default class LeftMenu extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	componentWillMount() {
+		console.log("componentWillMount");
+
+	}
 
 	render() {
+		console.log("render")
 		return (
 			<div className="row">
 				{/* Generate second level menu(Navbar). */}
@@ -37,6 +46,11 @@ export default class LeftMenu extends Component {
  * Second level menu navbar.
  */
 class SecondLevelNavbar extends Component {
+	constructor(props) {
+		super(props);
+		console.log(JSON.stringify(props));
+	}
+
 	render() {
 		return (
 			<Navbar style={{marginTop:0, zIndex:1}}>
