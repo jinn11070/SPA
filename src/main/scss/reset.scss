@@ -1,0 +1,22 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@charset "utf-8";
+
+*:focus {outline: none}
+body,span,img,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,
+label,legend,textarea,p,blockquote,table,tbody,tfoot,thead,th,td,input,select,textarea,button {margin:0;padding:0;outline:none}
+fieldset,img {border:0 none}
+dl,ul,ol,menu,li {list-style:none}
+blockquote, q {quotes: none}
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
+input,select,textarea,button {vertical-align:middle}
+img {max-width: 100%;vertical-align:top}
+a,button {border:0 none;background-color:transparent;cursor:pointer;outline:none}
+body {background:#fff}
+body,th,td,input,select,textarea,button {font-size:13px;line-height:1.5;font-family:'Roboto medium', sans-serif;}
+a {color:#333;text-decoration:none}
+a:link, a:visited, a:active, a:hover {text-decoration:none;outline:none}
+address,caption,cite,code,dfn,em,var {font-style:normal;font-weight:normal}
+table {border-collapse:collapse;border-spacing:0}

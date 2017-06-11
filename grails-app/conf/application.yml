@@ -16,8 +16,10 @@ dataSource:
 environments:
     development:
         dataSource:
-            dbCreate: create-drop
-            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            dbCreate: update
+            #url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            url: jdbc:h2:./devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+
     test:
         dataSource:
             dbCreate: update
@@ -63,6 +65,10 @@ spring:
     groovy:
         template:
             check-template-location: false
+
+server:
+    'contextPath': '/bass'
+    port: 8181
 # Spring Actuator Endpoints are Disabled by Default
 endpoints:
     enabled: false
@@ -124,3 +130,37 @@ grails:
 endpoints:
     jmx:
         unique-names: true
+---
+grails:
+    plugin:
+        springsecurity:
+            userLookup:
+                userDomainClassName: 'bass.user.User'
+                authorityJoinClassName: 'bass.user.UserAuthority'
+            authority:
+                className: 'bass.user.Authority'
+            controllerAnnotations:
+                staticRules:
+                  - pattern: '/'
+                    access: ['permitAll']
+                  - pattern: '/error'
+                    access: ['permitAll']
+                  - pattern: '/index'
+                    access: ['permitAll']
+                  - pattern: '/index.gsp'
+                    access: ['permitAll']
+                  - pattern: '/shutdown'
+                    access: ['permitAll']
+                  - pattern: '/management'
+                    access: ['permitAll']
+                  - pattern: '/assets/**'
+                    access: ['permitAll']
+                  - pattern: '/**/js/**'
+                    access: ['permitAll']
+                  - pattern: '/**/css/**'
+                    access: ['permitAll']
+                  - pattern: '/**/images/**'
+                    access: ['permitAll']
+                  - pattern: '/**/favicon.ico'
+                    access: ['permitAll']
+            logout.postOnly: false

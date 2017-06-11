@@ -2,36 +2,30 @@ import React, { Component } from 'react';
 import { CollapsibleNav, Navbar, NavBrand, Nav, NavItem, NavDropdown, MenuItem,
 	Grid, Row, Col, Modal, Button, Well } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import * as ajax from '../ajax';
 
-/**
- * Second level structure.
- *
- * +-TopLevel--------------+
- * | TopLevelNavbar        |
- * | +-SecondLevel-------+ |
- * | | SecondLevelNavBar | |
- * | | {childlen}        | |
- * | +-------------------+ |
- * | footer                |
- * +-----------------------+
- */
+const urlBase = '/bass';
+
 export default class LeftMenu extends Component {
-	constructor(props) {
-		super(props);
-	}
+    constructor() {
+        super();
 
-	componentWillMount() {
-		console.log("componentWillMount");
-
-	}
-
+        this.state = {
+            thisPath: ''
+        };
+    }
+    componentDidMount() {
+        this.setState({
+            thisPath: ajax.getThisPath()
+        });
+        ajax.setThisPath('management');
+    }
 	render() {
-		console.log("render")
 		return (
-			<div className="row">
+			<div id="content" className="row">
 				{/* Generate second level menu(Navbar). */}
 				<div className="col-sm-3 col-lg-2">
-					<SecondLevelNavbar route={this.props.route} />
+					<LeftMenuNavbar route={this.props.route} />
 				</div>
 				{/* Page content. */}
 				<div className="col-sm-9 col-lg-10">
@@ -43,22 +37,18 @@ export default class LeftMenu extends Component {
 }
 
 /**
- * Second level menu navbar.
+ * Left menu navbar.
  */
-class SecondLevelNavbar extends Component {
-	constructor(props) {
-		super(props);
-		console.log(JSON.stringify(props));
-	}
+class LeftMenuNavbar extends Component {
 
 	render() {
 		return (
 			<Navbar style={{marginTop:0, zIndex:1}}>
 				<Nav pullLeft>
 					{
-						(this.props.route.childRoutes ? this.props.route.childRoutes : []).map((item)=> {
+						(this.props.route.childRoutes ? this.props.route.childRoutes : []).map((item, i)=> {
 							return (
-								<LinkContainer key={item.name} to={'/'+this.props.route.path+'/'+item.path}>
+								<LinkContainer key={item.name} to={urlBase + '/'+this.props.route.path+'/'+item.path} eventKey={this.props.route.path} onSelect={ajax.setThisPath}>
 									<NavItem>{item.name}</NavItem>
 								</LinkContainer>
 							);

@@ -1,0 +1,88 @@
+$bass-main-black-color: #1C1D1F;
+$bass-top-border-bottom: #007FD5;
+
+$bass-main-blue-color: #007FD5;
+$bass-main-green-color: #008A6E;
+$bass-main-yellow-color: #E4A816;
+
+$bass-font-color: $bass-main-black-color;
+
+/* color | family | size | weight | letter spacing */
+@mixin font-default-style(
+    $color: $bass-font-color,
+    $family: 'Roboto medium',
+    $size: 13px,
+    $weight: normal,
+    $letter-spacing: -0.1px) {
+    letter-spacing: $letter-spacing;
+    font: {
+        family: $family, sans-serif;
+        weight: $weight;
+        size: $size;
+    }
+    text-decoration: none;
+    color: $color;
+}
+
+/* width == height */
+@mixin equal-width-height($size) {
+    width: $size;
+    height: $size;
+}
+
+/* height == line-height  */
+@mixin equal-height-lineheight($height) {
+    height: $height;
+    line-height: $height;
+}
+
+/* init padding, margin */
+@mixin init-padding-margin() {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* equal border top|bottom, left|right */
+@mixin border-style($type, $size, $color, $line:solid, $usable:"11") {
+
+    @if $type == "tb" {
+        @if $usable == "10" {
+            border-top: $size $line $color;
+        } @else if $usable == "01" {
+            border-bottom: $size $line $color;
+        } @else if $usable == "11" {
+            border-top: $size $line $color;
+            border-bottom: $size $line $color;
+        }
+
+    } @else if $type == "lr" {
+
+        @if $usable == "10" {
+            border-left: $size $line $color;
+        } @else if $usable == "01" {
+            border-right: $size $line $color;
+        } @else if $usable == "11" {
+            border-left: $size $line $color;
+            border-right: $size $line $color;
+        }
+    }
+
+}
+
+/* transition */
+@mixin transition-style($property, $duration, $time) {
+    transition-property: $property;
+    transition-duration: $duration;
+    transition-timing-function: $time;
+    -webkit-transition-property: $property;
+    -webkit-transition-duration: $duration;
+    -webkit-transition-timing-function: $time;
+    -moz-transition-property: $property;
+    -moz-transition-duration: $duration;
+    -moz-transition-timing-function: $time;
+    -ms-transition-property: $property;
+    -ms-transition-duration: $duration;
+    -ms-transition-timing-function: $time;
+}
+
+
