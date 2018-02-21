@@ -15,3 +15,5 @@ classes/
 /bass.iml
 bundle.js
 workspace.xml
+*.mv.db
+package-lock.json
